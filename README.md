@@ -1,1 +1,3 @@
 # smart-waste
+
+The image classification for recycling project uses machine learning to automate the sorting of waste materials like plastics, paper, and metals. By training a convolutional neural network (CNN) on a large dataset of labeled images, the model can accurately classify and sort recyclables in real-time. This automation enhances recycling efficiency, reduces human error, and improves the quality of recycled materials. Ultimately, the project aims to increase recycling rates, lower operational costs, and contribute to environmental sustainability by reducing landfill waste.
