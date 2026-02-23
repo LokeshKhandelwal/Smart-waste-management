@@ -1,8 +1,9 @@
 import time
-import streamlit as st
-import numpy as np
-from PIL import Image
 import urllib.request
+
+import numpy as np
+import streamlit as st
+from PIL import Image
 from utils import *
 
 labels = gen_labels()
@@ -25,12 +26,20 @@ html_temp = '''
     <center><h3 style="color: #008080; margin-top: -20px">Check the type here </h3></center>
     </div>
     '''
-st.set_option('deprecation.showfileUploaderEncoding', False)
+# st.set_option('deprecation.showfileUploaderEncoding', False)
+try:
+    st.set_option("deprecation.showfileUploaderEncoding", False)
+except Exception:
+    pass
 st.markdown(html_temp, unsafe_allow_html=True)
 opt = st.selectbox("How do you want to upload the image for classification?\n", ('Please Select', 'Upload image via link', 'Upload image from device'))
 if opt == 'Upload image from device':
     file = st.file_uploader('Select', type = ['jpg', 'png', 'jpeg'])
-    st.set_option('deprecation.showfileUploaderEncoding', False)
+    # st.set_option('deprecation.showfileUploaderEncoding', False)
+    try:
+     st.set_option("deprecation.showfileUploaderEncoding", False)
+    except Exception:
+      pass
     if file is not None:
         image = Image.open(file)
 
